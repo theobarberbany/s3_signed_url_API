@@ -1,5 +1,5 @@
 
-## A simple server to return signed S3 urls. 
+## A server to return signed S3 urls. 
 
 ### Getting Started:
 
@@ -12,7 +12,7 @@
 Example Query using httpie :
     
 ```json
- ~ http GET 'http://127.0.0.1:8000/api/S3Sign?objectName=log.txt'HTTP/1.1 200 OK
+ $ http GET 'http://127.0.0.1:8000/api/S3Sign?objectName=log.txt'HTTP/1.1 200 OK
 Connection: close
 Date: Fri, 09 Feb 2018 15:29:30 GMT
 Server: gunicorn/19.7.1
