@@ -7,7 +7,7 @@
 * Install dependencies : (pip install) boto, falcon, falcon_cors, gunicorn 
 * Run the server `gunicorn s3_server:api`
 
-
+Or: Build and run the Dockerfile, which will serve at `http://localhost:8000/api/S3Sign` 
 
 Example Query using httpie :
     
