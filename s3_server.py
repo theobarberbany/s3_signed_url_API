@@ -51,4 +51,4 @@ class signS3Upload(object):
 
 
 api = falcon.API(middleware=[cors.middleware])
-api.add_route('/api/S3Sign', signS3Upload())
+api.add_route('/S3Sign', signS3Upload())
