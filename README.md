@@ -1,4 +1,3 @@
-
 ## A server to return signed S3 urls. 
 
 ### Getting Started:
@@ -7,12 +6,26 @@
 * Install dependencies : (pip install) boto, falcon, falcon_cors, gunicorn 
 * Run the server `gunicorn s3_server:api`
 
-Or: 
+Or: Docker
 * Edit `s3_server.py`
 * Build and run the Dockerfile (`docker run -p 8000:8000 <image id>`)
 
-The server will serve at `http://localhost:8000/api/S3Sign` 
+Or: Deployment using vault and docker
 
+To deploy using docker and [vault](https://www.vaultproject.io/), build the image from the Dockerfile, or pull it from the docker hub: `tb15/tag_validator:master` 
+
+The image will read the vault credentials from an environment variable, then use sed to edit the validator.py file to update the database credentials. You will need to pass the vault client token, server url and index within vault to the image.
+
+e.g: 
+
+```
+docker run -d -p 8000:8000 -it \
+  -e TOKEN=${TOKEN} \
+  -e URL=${VAULT_ADDR} \
+  -e INDEX=tag-validator/s3 \
+  tb15/s3_server:master
+  ```
+The server will serve at `http://localhost:8000/api/S3Sign` 
 
 Example Query using httpie :
     
