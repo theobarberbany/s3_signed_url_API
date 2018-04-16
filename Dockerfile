@@ -8,4 +8,5 @@ RUN apt-get update && apt-get install -y jq \
     curl
 
 COPY . .
+EXPOSE 8000
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
