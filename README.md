@@ -12,9 +12,9 @@ Or: Docker
 
 Or: Deployment using vault and docker
 
-To deploy using docker and [vault](https://www.vaultproject.io/), build the image from the Dockerfile, or pull it from the docker hub: `tb15/tag_validator:master` 
+* To deploy using docker and [vault](https://www.vaultproject.io/), build the image from the Dockerfile, or pull it from the docker hub: `tb15/s3_server:master` 
 
-The image will read the vault credentials from an environment variable, then use sed to edit the validator.py file to update the database credentials. You will need to pass the vault client token, server url and index within vault to the image.
+* The image will read the vault credentials from an environment variable, then use sed to edit the s3_server.py file to update the database credentials. You will need to pass the vault client token, server url and index within vault to the image.
 
 e.g: 
 
